@@ -1,4 +1,5 @@
 """TEM COMO TIRAR ESSA FUNÇÃO (PrimeiroCalculo)??"""
+# Sim, so precisaremos implementar a funcao dentro da main. - Yuri
 
 import os
 import time
@@ -10,13 +11,14 @@ def main ():
         operator = None
         i = 0
 
-        print(">>> CALCULADORA: Quantas operações quiser <<<<<\n\n")
+        print(">>> CALCULATOR: As many operations as you want <<<<<\n\n")
                     
-        print("Soma [+]")
-        print("Subtração [-]")
-        print("Multiplicação [*]")
-        print("Divisão [/]\n\n")
-        print("Finalizar a operação [=]")
+        print("Sum [+]")
+        print("Subtraction [-]")
+        print("Multiplication [*]")
+        print("Division [/]\n\n")
+        print("Finish the operation [=]")
+
 
         i+=1
         number = input(f"N {i}: ")
@@ -31,16 +33,17 @@ def main ():
         while True:
             operator = input(": ")
 
-            # Verificando se o usuario deseja finalizar a conta
+            # Checking if the user wants to close the account
+
             if operator == '=':
                 print(f"{result_number}")
-                operator = input("\nDeseja realizar outro calculo? [S]im ou [N]ão: ")
+                operator = input("\nDo you want to perform another calculation? [Yes] or [N]no: ")
                 operator = operator.lower()
-                if operator == 's':
+                if operator == 'y':
                     os.system('cls')
                     main()
                 else:
-                    print("OBRIGADO POR USAR NOSSA CALCULADORA ;)")
+                    print("Thank you for using our calculator ;)")
                     time.sleep(5)
                     return 0
             i+=1
@@ -56,47 +59,45 @@ def main ():
             elif operator == '/':
                 result_number = division(number, result_number)
             else:
-                print("\n\nPor favor, informe um operador valido! Reiniciando...")
+                print("\n\nPlease enter a valid operator! Restarting...")
                 time.sleep(2.5)
                 os.system('cls')
                 continue
 
 
-"""FUNÇÕES"""
+# Function that will calculate the first 2 numbers
 
-# Função que vai realizar o calculo dos primeiros 2 numeros
-
-def firstCalculation (numero, numero_calculado, operador):
-    if operador == '+':
-        return numero + numero_calculado
-    elif operador == '-':
-        return numero - numero_calculado
-    elif operador == '*':
-        return numero * numero_calculado
-    elif operador == '/':
-        return numero / numero_calculado
+def firstCalculation (number, calculated_number, operator):
+    if operator == '+':
+        return number + calculated_number
+    elif operator == '-':
+        return number - calculated_number
+    elif operator == '*':
+        return number * calculated_number
+    elif operator == '/':
+        return number / calculated_number
     else:
-        print("\n\nPor favor, informe um operador valido! Reiniciando...")
+        print("\n\nPlease enter a valid operator! Restarting...")
         time.sleep(2.5)
         os.system('cls')
         main()
 
 
-# Função que vai somar os numeros
-def sum (numero, numero_calculado):
-    return numero_calculado + numero
+# numbers sum
+def sum (number, calculated_number):
+    return calculated_number + number
 
-# Função que vai subtrair os numeros
-def subtraction (numero, numero_calculado):
-    return numero_calculado - numero
+# numbers substraction
+def subtraction (number, calculated_number):
+    return calculated_number - number
 
-# Função que vai multiplicar os numeros
-def multiplication (numero, numero_calculado):
-    return numero_calculado * numero
+# numbers multiplication
+def multiplication (number, calculated_number):
+    return calculated_number * number
 
-# Função que vai dividir os numeros
-def division (numero, numero_calculado):
-    return numero_calculado / numero
+# numbers division
+def division (number, calculated_number):
+    return calculated_number / number
 
 try:
     main()
