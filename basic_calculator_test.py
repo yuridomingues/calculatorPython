@@ -1,5 +1,6 @@
 """TEM COMO TIRAR ESSA FUNÇÃO (PrimeiroCalculo)??"""
 # Sim, so precisaremos implementar a funcao dentro da main. - Yuri
+# Mas o lance é tirar esses calculos do programa, mas nao sei se tem como - Jao, Malvadao
 
 import os
 import time
@@ -21,12 +22,10 @@ def main ():
 
 
         i+=1
-        number = input(f"N {i}: ")
-        number = float(number)
+        number = float(input(f"N {i}: "))
         operator = input (": ")
         i+=1
-        result_number = input(f"N {i}: ")
-        result_number = float(result_number)
+        result_number = float(input(f"N {i}: "))
 
         result_number = firstCalculation (number, result_number, operator)
 
@@ -47,8 +46,7 @@ def main ():
                     time.sleep(5)
                     return 0
             i+=1
-            number = input(f"N {i}: ")
-            number = float(number)
+            number = float(input(f"N {i}: "))
             
             if operator == '+':
                 result_number = sum(number, result_number)
